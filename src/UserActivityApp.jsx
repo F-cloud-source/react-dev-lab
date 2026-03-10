@@ -61,8 +61,7 @@ return(
        placeholder="Add User Activity" 
        value={newactivity}
        onChange={HandleUserInput}/>
-    <button  className={isActive ? "bg-green-500" : "bg-gray-400"}>
-  {isActive ? "Active" : "Disabled"}  onClick={AddActivity}>Add Activity</button>
+    <button  className="Btn-1"  onClick={AddActivity}>Add Activity</button>
 
     <ul className="ul-1">
       {useractivity.map((task)  => 
