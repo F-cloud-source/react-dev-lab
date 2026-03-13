@@ -30,7 +30,7 @@ const IntialTask = [
 ]
 const [useractivity ,  setUserActivity] = useState(IntialTask);
 // New State Hook of User Activity App
-const [newactivity , setNewActivity] = useState();
+const [newactivity , setNewActivity] = useState("");
 
 
 function HandleUserInput(event){
@@ -44,30 +44,35 @@ function AddActivity(){
  if(newactivity.trim()  === "") return;
 
  // For live Task Update
-  const NewTask = [ {
-   id: newactivity,
-   Chores: newactivity
-  }]
+  const NewTask =  {
+   id: crypto.randomUUID(),
+    Chores: newactivity
+  }
 
 setUserActivity([...useractivity, NewTask]);
 
  }
 
-function DeleteActivity(Chores){
+function DeleteActivity(id){
 
-  setUserActivity(useractivity.filter(task => task.Chores !== Chores));
+  setUserActivity(useractivity.filter(task => task.id !== id));
 
 }
 
 return(
-  <div className="min-h-screen bg-slate-300 flex items-center justify-center p-4">
+  
+  < main className=" flex  min-h-screen w-full justify-center  bg-slate-50 py-10 px-4  items-start sm:items-center">
 
-  <div className="w-full max-w-md bg-white rounded-3xl shadow-2xl p-8 flex flex-col gap-6">  
+  <div className="w-full max-w-md mx-full bg-white shadow-yellow-500/5 backgrop-blur-md  rounded-3xl shadow-2xl  flex flex-col gap-6 p-6">  
+  
 
 
-  <div className="space-y-1"  >
-  <h1 className="text-3xl font-black text-slate-900 tracking-tighter">User Activity App</h1>
-  </div>
+    <div className="h1-holder-div w-full mb-4">
+
+
+     <h1 className=" text-3xl font-black text-black tracking-tighter">User Activity App</h1>
+
+ </div>
  
 <div className="flex flex-col gap-3"> 
 
@@ -77,16 +82,16 @@ return(
                 value={newactivity}
                 onChange={HandleUserInput}/>
 
-    <button  className="w-full bg-indigo-950 hover:bg-indigo-700 text-white font-bold py-3 rounded-2xl shadow-lg shadow-indigo-200 transition-all active:scale-95"  onClick={AddActivity}>Add Activity</button>
+    <button  className="w-full bg-amber-400 hover:bg-amber-300 text-black font-bold py-3 rounded-2xl shadow-lg shadow-indigo-200 transition-all active:scale-95"  onClick={AddActivity}>Add Activity</button>
 
 </div>
     
       <div className=" mt-4 border-t pt-6 space-y-3">
 
-  <ul className="mt-4 space-y-3 border-t border-slate-100 pt-6">
+  <ul className="mt-4 space-y-3  border-t border-slate-100 pt-6">
            {useractivity.map((task  => 
            <li key={task.id}>{task.Chores}
-           <button className="w-full bg-indigo-950 hover:bg-indigo-700 text-white font-bold py-3 rounded-2xl shadow-lg shadow-indigo-200 transition-all active:scale-95"  onClick={DeleteActivity}>Delete Activity</button>
+           <button className="w-full  bg-amber-400  hover:bg-amber-300 text-black font-bold py-3 rounded-2xl shadow-lg shadow-indigo-200 transition-all active:scale-95"  onClick={() => DeleteActivity(task.id)}>Delete Activity</button>
            </li>
       ))}
 
@@ -94,7 +99,8 @@ return(
         </div>
 
      </div>
-  </div>
+  </main>
+  
 )
 
 
