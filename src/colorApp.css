@@ -1,0 +1,19 @@
+
+.User-1{
+
+    display: flex;
+    align-content: center;
+    align-items: center;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+.User-2{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    padding: 80px;
+    margin: 30px;
+    border-radius: 20px;
+    cursor: pointer;
+}
