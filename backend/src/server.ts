@@ -42,7 +42,7 @@ app.post('/api/users', async (req: Request, res: Response) => {
 });
 
 // TEST 3: READ data endpoint (Fetches all users out of the database)
-app.get('/api/users', async (req: Request, res: Response) => {
+app.get('/api/users', async (req: Request, res: Response) => {2
     try {
         const result = await pool.query('SELECT * FROM users ORDER BY id DESC;');
         res.json({ status: "Success", users: result.rows });
