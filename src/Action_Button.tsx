@@ -1,21 +1,24 @@
+interface LedgerbuttonProps {
+    onClick:(event: React.MouseEvent<HTMLButtonElement>) => void;
+}
 
- export function LedgerAction ({Add}) {
+
+
+ export const   Ledgerbutton = ({onClick }: LedgerbuttonProps)  => {
     return (
-        <div>
-            <header>
 
-        
+   <div className="Div1">   
+
+           <button onClick={onClick}    className="Btn1">  Add Buyers</button>
+
+           <button onClick={onClick}   className="Btn2">  Delete Buyers</button>
+
+           <button onClick={onClick}   className="Btn3"> Update Data </button>
+
+   </div>
+    
+           
+
             
-            <button> Add Buyers</button>
-
-           <button>Delete Buyers</button>
-
-           <button> Update Buyers</button>
-
-            </header>
-      
-
-          
-        </div>
     );
 }
