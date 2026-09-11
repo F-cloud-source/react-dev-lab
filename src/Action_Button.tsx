@@ -4,7 +4,7 @@ interface LedgerbuttonProps {
 
 
 
- export const   Ledgerbutton = ({onClick }: LedgerbuttonProps)  => {
+export const   LedgerButton = ({onClick }: LedgerbuttonProps)  => {
     return (
 
    <div className="Div1">   
@@ -15,8 +15,7 @@ interface LedgerbuttonProps {
 
            <button onClick={onClick}   className="Btn3"> Update Data </button>
 
-   </div>
-    
+   </div>   
            
 
             
