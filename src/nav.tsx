@@ -2,7 +2,7 @@
 
 return(
     
-    <nav>
+    <nav   className="navbar">
     <div>Ledger Book</div>
     <ul>
 
