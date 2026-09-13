@@ -1,21 +1,21 @@
 
-import { useState} from 'react';
+//import { useState} from 'react';
 
 
-export default function SearchBar(){
+//export default function SearchBar(){
 
-    const [searchItem, setSearchTerm] = useState('');
+   // const [searchItem, setSearchTerm] = useState('');
 
    
   
-return (
-    <div>
+//return (
+   // <form>
 
-     <input  type="text"
-       placeholder="Search for Products" 
-       value={searchItem}
-       onChange={(e) => setSearchTerm(e.target.value)}/>
- 
-    </div>
-)
-}
+   //  <input  type="text"
+   //    placeholder="add User Items" 
+    //   value={searchItem}
+    //   onChange={(e) => setSearchTerm(e.target.value)}/>
+ //</form>
+//)
+//}
+
