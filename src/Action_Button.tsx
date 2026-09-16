@@ -1,51 +1,24 @@
-  import { useState } from 'react';
+import  React, {useState  } from 'react';
 
-  
-  export default function MyInput(){
-    
-    const [mydata , setMyData] = useState('');
-    
+const [submit, setSubmit] = useState<string>('');
 
 
-    const handleSave = () => {
-        console.log("Button is alive");
-    }
-    
-    
-
-  
-
-    const handledelete = () => {
-        
-       
-    
-    }
-
-   const handleEdit = () => {
+const HandleInputChange = (event: ChangeEvent<HTMLInputElement>)  => {
+    setSubmit(event.target.value);
+}
 
 
-   }
+const handleButtonClick = (event: ChangeEvent<HTMLInputElement> => {
+ event.preventdefault();
+});
+export function DataSubmit(){
 
-   const handleUpdate = () => {
+    <div>
+        <input placeholder="Add Specfic Data for product items" 
+        type="text"
+        value={HandleInputChange}>
+        </input>
 
-
-   }
-    return(
-
-      
- <form>
-
- <input type= "text" placeholder="add user items" value={mydata} onChange={(e: React.ChangeEvent<HTMLInputElement>)  => setMyData(e.target.value)}>
- 
- </input>
-
- <button onClick={handleSave}>Add Data</button>
- <button onClick={handledelete}>Delete Data</button>
- <button  onClick={handleEdit}>Edit Data</button>
- <button  onClick={handleUpdate}> Data</button>
-    
- </form>
-      
-    )
-
-  }
+        <button onClick={handleButtonClick}> Add Specific Data in Form</button>
+    </div>
+}

@@ -1,9 +1,0 @@
- Add button and Input Bar write user data of items
-
-
-resquest user items data in Backend 
-
-APi request backend to send this spefic data in db 
-
-
-db respoense back to api send data in jsonformat to UI 
